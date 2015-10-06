@@ -5,7 +5,7 @@
 	"description": "Highlights CSS and JavaScript using http://hightlightjs.org",
 	"options_page": "options.html",
 	"content_scripts": [{
-		"matches": ["http://*/*.css", "http://*/*.js"],
+		"matches": ["*://*/*.css", "*://*/*.js"],
 		"js": ["js/highlight.min.js", "js/script.js"],
 		"css": ["style.css"]
 	}],
