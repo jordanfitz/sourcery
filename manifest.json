@@ -1,0 +1,19 @@
+{
+	"name": "Sourcery",
+	"version": "0.0.1",
+	"manifest_version": 2,
+	"description": "Highlights CSS and JavaScript using http://hightlightjs.org",
+	"options_page": "options.html",
+	"content_scripts": [{
+		"matches": ["http://*/*.css", "http://*/*.js"],
+		"js": ["js/highlight.min.js", "js/script.js"],
+		"css": ["style.css"]
+	}],
+	"permissions": [
+		"storage"
+	],
+	"web_accessible_resources": [
+		"themes/*.css",
+		"themes.json"
+	]
+}

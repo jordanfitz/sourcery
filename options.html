@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sourcery Options</title>
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div class="options">
+			<h1>Sourcery Options</h1>
+
+			<section>
+				<span class="label">Theme</span>
+				<select id="theme"></select><br>
+			</section>
+
+			<section>
+				<span class="label">Custom theme CSS</span><br>
+				<textarea id="custom" spellcheck="false"></textarea>
+<pre><code id="css-preview" class="javascript">function hello() {
+	var message = "Hello, world"
+	console.log(message);
+}</code></pre>
+<pre><code id="js-preview" class="css">body {
+	margin: 0;
+	background: #262626;
+}</code></pre>
+			</section>
+
+			<span class="label" id="status"></span>
+			<button id="save">Save</button>
+		</div>
+
+		<script type="text/javascript" src="js/highlight.min.js"></script>
+		<script type="text/javascript" src="js/options.js"></script>
+	</body>
+</html>

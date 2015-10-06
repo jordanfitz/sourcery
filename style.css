@@ -1,0 +1,56 @@
+body {
+	margin: 0;
+}
+
+pre {
+	margin: 0;
+	tab-size: 4;
+}
+
+.options {
+	padding: 20px;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.options h1 {
+	margin: 0 0 30px 0;
+	font-weight: 600;
+}
+
+.options section {
+	margin-bottom: 20px;
+}
+
+.options select {
+	padding: 5px;
+	outline: none;
+}
+
+.options .label {
+	font-size: 17px;
+	font-weight: 300;
+	padding: 0 10px 0 0;
+}
+
+.options textarea {
+	min-height: 300px;
+	min-width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	margin: 10px 0 0 0;
+}
+
+.options button {
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	padding: 5px 10px;
+	text-transform: uppercase;
+	float: right;
+	outline: none;
+}
+
+.options pre {
+	margin-top: 20px;
+	font-size: 15px;
+}
