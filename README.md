@@ -1,6 +1,6 @@
 ## Sourcery
 
-#### Sourcery is a Google Chrome extension that adds syntax highlighting for CSS and JavaScript files.
+##### Sourcery is a Google Chrome extension that adds syntax highlighting for CSS and JavaScript files.
 
 #### Credits:
 
