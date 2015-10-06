@@ -1,6 +1,6 @@
 {
 	"name": "Sourcery",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"manifest_version": 2,
 	"description": "Highlights CSS and JavaScript using http://hightlightjs.org",
 	"options_page": "options.html",
@@ -15,5 +15,11 @@
 	"web_accessible_resources": [
 		"themes/*.css",
 		"themes.json"
-	]
+	],
+	"icons": {
+		"16": "img/logo_16.png",
+		"64": "img/logo_64.png",
+		"128": "img/logo_128.png",
+		"512": "img/logo_512.png"
+	}
 }
