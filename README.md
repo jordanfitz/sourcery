@@ -1,4 +1,4 @@
-![Sourcery icon](https://raw.githubusercontent.com/JordanFitz/sourcery/master/img/logo_128.png)
+![Sourcery icon](https://raw.githubusercontent.com/JordanFitz/sourcery/master/img/logo.png)
 
 ## [Sourcery](https://chrome.google.com/webstore/detail/sourcery/kfbjhkbbfinlgdpidcgjlcpmmaldfbpe)
 
