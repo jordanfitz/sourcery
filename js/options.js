@@ -52,12 +52,12 @@ var getOptions = function() {
 			hljs.highlightBlock(document.getElementById("js-preview"));
 			hljs.highlightBlock(document.getElementById("css-preview"));
 
-			themeChanged();
+			themeChanged(true);
 		});
 	}, function() {});
 };
 
-var themeChanged = function() {
+var themeChanged = function(suppress) {
 	function listener() {
 		var style;
 
@@ -86,16 +86,19 @@ var themeChanged = function() {
 			}
 		}
 
-		if (!customLoaded) customChanged();
+		if (!customLoaded) customChanged(true);
 	};
 
 	var request = new XMLHttpRequest();
+
 	request.addEventListener("load", listener);
 	request.open("GET", chrome.extension.getURL("themes/" + document.getElementById("theme").value));
 	request.send();
+
+	if(!suppress) saveOptions();
 }
 
-var customChanged = function() {
+var customChanged = function(suppress) {
 	customLoaded = true;
 
 	if (document.getElementById("custom-style") === null) {
@@ -121,10 +124,11 @@ var customChanged = function() {
 			style.appendChild(document.createTextNode(document.getElementById("custom").value));
 		}
 	}
+
+	if(!suppress) saveOptions();
 };
 
 document.addEventListener('DOMContentLoaded', getOptions);
-document.getElementById('save').addEventListener('click', saveOptions);
 
-document.getElementById("custom").onkeyup = customChanged;
-document.getElementById("theme").onchange = themeChanged;
+document.getElementById("custom").onkeyup = function(){ customChanged() };
+document.getElementById("theme").onchange = function(){ themeChanged() };

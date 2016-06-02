@@ -1,9 +1,7 @@
-String.prototype.endsWith = function(suffix) {
-	if (this.length < suffix.length)
-		return false;
-	return this.lastIndexOf(suffix) === this.length - suffix.length;
-}
-
+/*
+ * Loads the selected theme's CSS, along with any custom
+ * CSS applied in the options.
+ */
 chrome.storage.sync.get({
 	theme: "default.css",
 	customCSS: ""
@@ -34,15 +32,26 @@ chrome.storage.sync.get({
 	};
 
 	var request = new XMLHttpRequest();
+	
 	request.addEventListener("load", listener);
 	request.open("GET", chrome.extension.getURL("themes/" + items.theme));
 	request.send();
 });
 
-var pre = document.getElementsByTagName("pre")[0];
-var content = pre.innerHTML;
-var language = window.location.href.endsWith(".js") ? "javascript" : "css";
+function init() {
+	/*
+	 * Code adapted from JSONView.
+	 * https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc
+	 */
 
-pre.innerHTML = "<code class='" + language + "'>" + content + "</code>";
+	if(document.body && (document.body.childNodes[0] && document.body.childNodes[0].tagName === "PRE")) {
+		var pre = document.body.childNodes[0];
+		var content = pre.innerHTML;
 
-hljs.highlightBlock(document.getElementsByTagName("code")[0])
+		pre.innerHTML = "<code>" + content + "</code>";
+
+		hljs.highlightBlock(document.getElementsByTagName("code")[0]);
+	}
+}
+
+init();
