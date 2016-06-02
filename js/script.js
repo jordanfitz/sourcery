@@ -43,14 +43,14 @@ function init() {
 	 * Code adapted from JSONView.
 	 * https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc
 	 */
-
-	if(document.body && (document.body.childNodes[0] && document.body.childNodes[0].tagName === "PRE")) {
-		var pre = document.body.childNodes[0];
+	 
+	if(document.body && (document.body.children.length === 1 && document.body.children[0].tagName === "PRE")) {
+		var pre = document.body.children[0];
 		var content = pre.innerHTML;
 
-		pre.innerHTML = "<code>" + content + "</code>";
+		pre.innerHTML = "<code id=\"sourcery\">" + content + "</code>";
 
-		hljs.highlightBlock(document.getElementsByTagName("code")[0]);
+		hljs.highlightBlock(document.getElementById("sourcery"));
 	}
 }
 
